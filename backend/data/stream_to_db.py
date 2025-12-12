@@ -1,19 +1,19 @@
 import requests
 import gzip
 import json
-import psycopg2
-from psycopg2.extras import execute_values
 import os
 from dotenv import load_dotenv
+from sqlalchemy import create_engine, Table,  MetaData
+
 load_dotenv()
 
 MODEL = "gemma-2-9b-it"
 LAYER = "20-gemmascope-res-131k"
 LINK = "https://neuronpedia-datasets.s3.amazonaws.com/v1/{model}/{layer}/features/batch-{i}.jsonl.gz"
-
+BATCH_SIZE = 5000
 DATABASE_URL = os.getenv("DATABASE_URL")
 
-FIELD_MAP = {
+features_field_map = {
     "model_id":      {"source": "modelId"},
     "layer":         {"source": "layer"},
     "index":         {"source": "index"},
@@ -24,6 +24,23 @@ FIELD_MAP = {
     "pos_values":    {"source": "pos_values"},
     "frac_nonzero":  {"source": "frac_nonzero", "default": 0.0},
 }
+
+# SQLAlchemy setup
+engine = create_engine(DATABASE_URL)
+metadata = MetaData()
+
+features = Table(
+    "features",
+    metadata,
+    autoload_with=engine
+)
+
+insertable_cols = {
+    c.name
+    for c in features.columns
+    if not c.primary_key and c.server_default is None
+}
+
 
 def stream_from_s3():
     for i in range(127):
@@ -37,53 +54,31 @@ def stream_from_s3():
             for line in gz:
                 yield json.loads(line)
 
+
 def transform_row(obj):
-    out = []
-    for col, rules in FIELD_MAP.items():
+    out = {}
+    for col, rules in features_field_map.items():
+        if col not in insertable_cols:
+            continue
         src = rules["source"]
         default = rules.get("default")
-        value = obj.get(src, default)
-        out.append(value)
-    return tuple(out)
+        out[col] = obj.get(src, default)
+    return out
+
 
 def stream_to_postgres():
     rows = []
-    BATCH = 5000
 
-    with psycopg2.connect(DATABASE_URL) as conn:
-        with conn.cursor() as cur:
-            for item in stream_from_s3():
-                rows.append(transform_row(item))
+    with engine.begin() as conn:
+        for item in stream_from_s3():
+            rows.append(transform_row(item))
 
-                if len(rows) >= BATCH:
-                    execute_values(
-                        cur,
-                        """
-                        INSERT INTO features (
-                            model_id, layer, index, source_set_name,
-                            neg_str, neg_values, pos_str, pos_values,
-                            frac_nonzero
-                        ) VALUES %s
-                        """,
-                        rows
-                    )
-                    rows = []
+            if len(rows) >= BATCH_SIZE:
+                conn.execute(features.insert(), rows)
+                rows = []
+        if rows:
+            conn.execute(features.insert(), rows)
 
-            # final remainder
-            if rows:
-                execute_values(
-                    cur,
-                    """
-                    INSERT INTO features (
-                        model_id, layer, index, source_set_name,
-                        neg_str, neg_values, pos_str, pos_values,
-                        frac_nonzero
-                    ) VALUES %s
-                    """,
-                    rows
-                )
-
-        conn.commit()
 
 if __name__ == "__main__":
     stream_to_postgres()
