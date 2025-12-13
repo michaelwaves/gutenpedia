@@ -10,5 +10,16 @@ export default defineConfig({
     alias: {
       "@": path.resolve(__dirname, "./src")
     }
+  },
+  server: {
+    cors: {
+      origin: 'http://localhost:8080'
+    }
+  },
+  build: {
+    manifest: true,
+    rollupOptions: {
+      input: "./server.ts"
+    }
   }
 })
