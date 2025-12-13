@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 function LoginPage() {
     const navigate = useNavigate()
     return (
-        <div>
+        <div className="flex flex-col gap-2 items-center">
             Login
             <GoogleLogin onSuccess={(res) => {
                 console.log(res)
