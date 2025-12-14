@@ -82,6 +82,12 @@ CREATE TABLE "features" (
 CREATE TABLE "explanations" (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     feature_id UUID REFERENCES features(id) ON DELETE CASCADE,
+    --temporary! just to do the mapping to feature id
+    "model_id" TEXT NOT NULL,
+    "layer" INTEGER NOT NULL,
+    feature_index INTEGER NOT NULL,
+
+
     "embedding" vector(256),
     "description" TEXT NOT NULL,
     "notes" TEXT,
