@@ -10,4 +10,31 @@ dependencies = [
     "python-dotenv>=1.2.1",
     "requests>=2.32.5",
     "sqlalchemy>=2.0.45",
+    "fastapi>=0.115.6,<0.116",
+    "uvicorn>=0.34.0,<1.0",
+    "duckdb",
+    "pyarrow",
+    "pydantic",
+    "jinja2",
+    "python-multipart",
+    "python-dotenv>=1.0.1,<2.0.0",
+    "numpy>=2.2",
+    "psutil>=5.9.8,<6.0",
+    "transformers>=4.38.1,<5.0",
+    "einops>=0.7.0,<1.0",
+    "pytest>=8.1.1,<9.0",
+    "huggingface-hub>=0.34.0,<1.0",
+    "huggingface>=0.0.1,<1.0",
+    "pandas>=2.2.2,<3.0",
+    "sae-lens>=6.12.1,<7.0",
+    "sentry-sdk[fastapi]>=2.20.0,<3.0",
+    "nnsight>=0.4.3,<1.0",
+    # Torch platform-specific constraints
+    "torch>=1.10; sys_platform == 'linux'",
+    "torch>=1.10,!=2.0,!=2.1.0; sys_platform != 'linux'",
+    "transformer-lens @ git+https://github.com/hijohnnylin/TransformerLens.git@temp_branch_version",
 ]
+
+
+[tool.uv.sources]
+neuronpedia-inference-client = { path = "inference/neuronpedia-inference-client", editable = true }
