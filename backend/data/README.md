@@ -8,7 +8,7 @@ features - 0.5 GB
 ## Insert to postgres
 Make sure DATABASE_URL connection string is set in .env or environment
 ```bash
-export DATABASE_URL=psycopg2://user:pass@host:port/database
+export DATABASE_URL=postgresql://user:pass@host:port/database
 ```
 Stream each type of data
 ```bash
