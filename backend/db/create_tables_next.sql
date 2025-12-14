@@ -49,19 +49,16 @@ CREATE TABLE users
  
   PRIMARY KEY (id)
 );
- 
-CREATE TABLE activations(
-    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-    sample_id UUID REFERENCES samples(id) ON DELETE CASCADE,
-    feature_id UUID REFERENCES features(id) ON DELETE CASCADE, 
-    "values" DOUBLE PRECISION[] DEFAULT ARRAY[]::DOUBLE PRECISION[],
-    "max_value" DOUBLE PRECISION ,
-    "max_value_token_index" INTEGER ,
-    "min_value" DOUBLE PRECISION ,
-    "created_by" INTEGER,
-    "created_at" TIMESTAMP(3) NOT NULL DEFAULT NOW()
-);
 
+CREATE TABLE samples(
+    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    dataset_id UUID,
+    "tokens" TEXT[],
+    sample_text TEXT,
+    created_at TIMESTAMP NOT NULL DEFAULT NOW(),
+    created_by INTEGER
+);
+ 
 
 CREATE TABLE "features" (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
@@ -78,10 +75,22 @@ CREATE TABLE "features" (
     "created_at" TIMESTAMP(3) NOT NULL DEFAULT NOW()
 );
 
+CREATE TABLE activations(
+    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    sample_id UUID REFERENCES samples(id) ON DELETE CASCADE,
+    feature_id UUID REFERENCES features(id) ON DELETE CASCADE, 
+    "values" DOUBLE PRECISION[] DEFAULT ARRAY[]::DOUBLE PRECISION[],
+    "max_value" DOUBLE PRECISION ,
+    "max_value_token_index" INTEGER ,
+    "min_value" DOUBLE PRECISION ,
+    "created_by" INTEGER,
+    "created_at" TIMESTAMP(3) NOT NULL DEFAULT NOW()
+);
+
 
 CREATE TABLE "explanations" (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-    feature_id UUID REFERENCES features(id) ON DELETE CASCADE,
+    feature_id UUID, --REFERENCES features(id) ON DELETE CASCADE,
     --temporary! just to do the mapping to feature id
     "model_id" TEXT NOT NULL,
     "layer" INTEGER NOT NULL,
@@ -104,16 +113,8 @@ name VARCHAR(255),
 description TEXT,
 link VARCHAR(255), --hf id
 type VARCHAR(255), --huggingface
-created_at TIMESTAMP() NOT NULL DEFAULT NOW(),
+created_at TIMESTAMP NOT NULL DEFAULT NOW(),
 created_by INTEGER
 );
 
 
-CREATE TABLE samples(
-    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-    dataset_id UUID,
-    "tokens" TEXT[],
-    sample_text TEXT,
-    created_at TIMESTAMP() NOT NULL DEFAULT NOW(),
-    created_by INTEGER
-);

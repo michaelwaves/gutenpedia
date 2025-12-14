@@ -1,5 +1,21 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Installation
+```bash
+npm i
+```
+### ENV vars
+```bash
+ cp env.example .env
+```
+fill in env vars
+
+### Schema
+Introspect database with 
+```bash
+npx kysely-codegen --out-file lib/schema.ts
+```
+
 ## Getting Started
 
 First, run the development server:
