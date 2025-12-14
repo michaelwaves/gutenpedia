@@ -63,7 +63,7 @@ CREATE TABLE samples(
 CREATE TABLE "features" (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     "model_id" TEXT NOT NULL,
-    "layer" INTEGER NOT NULL,
+    "layer" TEXT NOT NULL,
     feature_index INTEGER NOT NULL,
     "source_set_name" TEXT,
     "neg_str" TEXT[] DEFAULT ARRAY[]::TEXT[],
@@ -93,7 +93,7 @@ CREATE TABLE "explanations" (
     feature_id UUID, --REFERENCES features(id) ON DELETE CASCADE,
     --temporary! just to do the mapping to feature id
     "model_id" TEXT NOT NULL,
-    "layer" INTEGER NOT NULL,
+    "layer" TEXT NOT NULL,
     feature_index INTEGER NOT NULL,
 
 

@@ -16,7 +16,7 @@ DATABASE_URL = os.getenv("DATABASE_URL")
 features_field_map = {
     "model_id":      {"source": "modelId"},
     "layer":         {"source": "layer"},
-    "index":         {"source": "index"},
+    "feature_index":  {"source": "index"},
     "source_set_name": {"source": "sourceSetName", "default": ""},
     "neg_str":       {"source": "neg_str"},
     "neg_values":    {"source": "neg_values"},

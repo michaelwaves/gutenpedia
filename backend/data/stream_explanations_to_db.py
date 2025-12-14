@@ -18,7 +18,7 @@ STREAM_FROM_DISK = False  # must download to BASE_DIR first
 explanations_field_map = {
     "model_id":      {"source": "modelId"},
     "layer":         {"source": "layer"},
-    "index":         {"source": "index"},
+    "feature_index":         {"source": "index"},
     "embedding":       {"source": "embedding"},
     "description":    {"source": "description"},
     "notes":       {"source": "notes"},
