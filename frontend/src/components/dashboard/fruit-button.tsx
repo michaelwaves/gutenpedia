@@ -13,8 +13,6 @@ function FruitButton() {
     }
     return (
         <div>
-
-
             <Button variant={"default"} className="bg-gray-800 hover:cursor-pointer hover:bg-gray-700 animate-color" onClick={getFruits}>🍎🍐🍍</Button>
 
             <div className="flex flex-row gap-4">
