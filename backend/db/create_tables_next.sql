@@ -52,12 +52,9 @@ CREATE TABLE users
  
 CREATE TABLE activations(
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-    sample_id UUID,
+    sample_id UUID REFERENCES samples(id) ON DELETE CASCADE,
+    feature_id UUID REFERENCES features(id) ON DELETE CASCADE, 
     "values" DOUBLE PRECISION[] DEFAULT ARRAY[]::DOUBLE PRECISION[],
-    feature_index  INTEGER NOT NULL,
-    "layer" INTEGER NOT NULL,
-    "model_id" TEXT NOT NULL,
-    "feature_id" UUID, 
     "max_value" DOUBLE PRECISION ,
     "max_value_token_index" INTEGER ,
     "min_value" DOUBLE PRECISION ,
@@ -83,11 +80,8 @@ CREATE TABLE "features" (
 
 
 CREATE TABLE "explanations" (
-   id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-    "model_id" TEXT NOT NULL,
-    "layer" TEXT NOT NULL,
-    feature_index TEXT NOT NULL,
-    feature_id UUID,
+    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    feature_id UUID REFERENCES features(id) ON DELETE CASCADE,
     "embedding" vector(256),
     "description" TEXT NOT NULL,
     "notes" TEXT,
@@ -114,6 +108,6 @@ CREATE TABLE samples(
     dataset_id UUID,
     "tokens" TEXT[],
     sample_text TEXT,
-    created_at TIMESTAMP() NOT NULL DEFAULT NOW()
+    created_at TIMESTAMP() NOT NULL DEFAULT NOW(),
     created_by INTEGER
-)
+);
