@@ -3,8 +3,8 @@ import { db } from "../db";
 import { Datasets } from "../schema";
 
 
-export async function findDatasetById(id: number) {
-    return await db.selectFrom('Datasets').where('id', '=', id)
+export async function findDatasetById(id: string) {
+    return await db.selectFrom('datasets').where('id', '=', id)
         .selectAll()
         .executeTakeFirstOrThrow()
 }
@@ -15,7 +15,7 @@ export async function findDatasets(criteria: Partial<Datasets>) {
         query = query.where('name', '=', criteria.name)
     }
     if (criteria.created_by) {
-        query = query.where('name', '=', criteria.created_by)
+        query = query.where('created_by', '=', criteria.created_by)
     }
     return await query.selectAll().execute()
 }
@@ -32,7 +32,7 @@ export async function createDataset(dataset: Insertable<Datasets>) {
         .executeTakeFirstOrThrow()
 }
 
-export async function deletePerson(id: string) {
+export async function deleteDataset(id: string) {
     return await db.deleteFrom('datasets').where('id',
         '=', id
     )
