@@ -1,0 +1,111 @@
+sample_idx,pos,feature_idx,act_val,token,model,source
+0,0,90871,1152.0,hello,gemma-2-9b-it,20-gemmascope-res-131k
+0,0,74838,390.0,hello,gemma-2-9b-it,20-gemmascope-res-131k
+0,0,52094,170.0,hello,gemma-2-9b-it,20-gemmascope-res-131k
+0,0,26379,111.0,hello,gemma-2-9b-it,20-gemmascope-res-131k
+0,0,53897,85.5,hello,gemma-2-9b-it,20-gemmascope-res-131k
+0,0,57083,56.0,hello,gemma-2-9b-it,20-gemmascope-res-131k
+0,0,124601,51.0,hello,gemma-2-9b-it,20-gemmascope-res-131k
+0,0,94511,47.25,hello,gemma-2-9b-it,20-gemmascope-res-131k
+0,0,75038,43.75,hello,gemma-2-9b-it,20-gemmascope-res-131k
+0,0,64437,42.0,hello,gemma-2-9b-it,20-gemmascope-res-131k
+0,1,51811,67.0, sa,gemma-2-9b-it,20-gemmascope-res-131k
+0,1,26823,35.0, sa,gemma-2-9b-it,20-gemmascope-res-131k
+0,1,123665,32.0, sa,gemma-2-9b-it,20-gemmascope-res-131k
+0,1,26379,30.0, sa,gemma-2-9b-it,20-gemmascope-res-131k
+0,1,19031,24.5, sa,gemma-2-9b-it,20-gemmascope-res-131k
+0,1,79674,23.25, sa,gemma-2-9b-it,20-gemmascope-res-131k
+0,1,49984,22.625, sa,gemma-2-9b-it,20-gemmascope-res-131k
+0,1,32283,19.875, sa,gemma-2-9b-it,20-gemmascope-res-131k
+0,1,54766,12.875, sa,gemma-2-9b-it,20-gemmascope-res-131k
+0,1,100549,12.6875, sa,gemma-2-9b-it,20-gemmascope-res-131k
+0,2,51811,85.0,es,gemma-2-9b-it,20-gemmascope-res-131k
+0,2,86236,28.25,es,gemma-2-9b-it,20-gemmascope-res-131k
+0,2,26379,26.25,es,gemma-2-9b-it,20-gemmascope-res-131k
+0,2,79674,24.5,es,gemma-2-9b-it,20-gemmascope-res-131k
+0,2,32283,22.875,es,gemma-2-9b-it,20-gemmascope-res-131k
+0,2,116731,19.25,es,gemma-2-9b-it,20-gemmascope-res-131k
+0,2,100679,16.5,es,gemma-2-9b-it,20-gemmascope-res-131k
+0,2,48229,15.75,es,gemma-2-9b-it,20-gemmascope-res-131k
+0,2,81515,13.6875,es,gemma-2-9b-it,20-gemmascope-res-131k
+0,2,103368,13.5625,es,gemma-2-9b-it,20-gemmascope-res-131k
+0,3,128683,46.0,!,gemma-2-9b-it,20-gemmascope-res-131k
+0,3,26379,43.25,!,gemma-2-9b-it,20-gemmascope-res-131k
+0,3,123665,40.25,!,gemma-2-9b-it,20-gemmascope-res-131k
+0,3,90871,36.0,!,gemma-2-9b-it,20-gemmascope-res-131k
+0,3,32283,31.0,!,gemma-2-9b-it,20-gemmascope-res-131k
+0,3,79674,25.75,!,gemma-2-9b-it,20-gemmascope-res-131k
+0,3,2587,25.75,!,gemma-2-9b-it,20-gemmascope-res-131k
+0,3,42667,25.25,!,gemma-2-9b-it,20-gemmascope-res-131k
+0,3,122548,20.75,!,gemma-2-9b-it,20-gemmascope-res-131k
+0,3,48960,19.5,!,gemma-2-9b-it,20-gemmascope-res-131k
+0,0,90871,1184.0,how,gemma-2-9b-it,20-gemmascope-res-131k
+0,0,74838,400.0,how,gemma-2-9b-it,20-gemmascope-res-131k
+0,0,52094,163.0,how,gemma-2-9b-it,20-gemmascope-res-131k
+0,0,26379,113.5,how,gemma-2-9b-it,20-gemmascope-res-131k
+0,0,53897,87.5,how,gemma-2-9b-it,20-gemmascope-res-131k
+0,0,57083,57.0,how,gemma-2-9b-it,20-gemmascope-res-131k
+0,0,48287,52.0,how,gemma-2-9b-it,20-gemmascope-res-131k
+0,0,94511,47.25,how,gemma-2-9b-it,20-gemmascope-res-131k
+0,0,75038,45.5,how,gemma-2-9b-it,20-gemmascope-res-131k
+0,0,64437,40.0,how,gemma-2-9b-it,20-gemmascope-res-131k
+0,1,84081,57.5, do,gemma-2-9b-it,20-gemmascope-res-131k
+0,1,117702,49.25, do,gemma-2-9b-it,20-gemmascope-res-131k
+0,1,26379,42.75, do,gemma-2-9b-it,20-gemmascope-res-131k
+0,1,77935,40.25, do,gemma-2-9b-it,20-gemmascope-res-131k
+0,1,45629,39.75, do,gemma-2-9b-it,20-gemmascope-res-131k
+0,1,90871,35.0, do,gemma-2-9b-it,20-gemmascope-res-131k
+0,1,112997,33.0, do,gemma-2-9b-it,20-gemmascope-res-131k
+0,1,87428,32.5, do,gemma-2-9b-it,20-gemmascope-res-131k
+0,1,32283,28.875, do,gemma-2-9b-it,20-gemmascope-res-131k
+0,1,61446,27.5, do,gemma-2-9b-it,20-gemmascope-res-131k
+0,2,90871,65.0, i,gemma-2-9b-it,20-gemmascope-res-131k
+0,2,75735,57.0, i,gemma-2-9b-it,20-gemmascope-res-131k
+0,2,26379,46.0, i,gemma-2-9b-it,20-gemmascope-res-131k
+0,2,48372,32.75, i,gemma-2-9b-it,20-gemmascope-res-131k
+0,2,12197,32.75, i,gemma-2-9b-it,20-gemmascope-res-131k
+0,2,85823,32.0, i,gemma-2-9b-it,20-gemmascope-res-131k
+0,2,49410,30.625, i,gemma-2-9b-it,20-gemmascope-res-131k
+0,2,117702,29.0, i,gemma-2-9b-it,20-gemmascope-res-131k
+0,2,32283,26.75, i,gemma-2-9b-it,20-gemmascope-res-131k
+0,2,115040,24.125, i,gemma-2-9b-it,20-gemmascope-res-131k
+0,3,98762,87.0, build,gemma-2-9b-it,20-gemmascope-res-131k
+0,3,26379,37.0, build,gemma-2-9b-it,20-gemmascope-res-131k
+0,3,32283,34.75, build,gemma-2-9b-it,20-gemmascope-res-131k
+0,3,90871,32.0, build,gemma-2-9b-it,20-gemmascope-res-131k
+0,3,81709,32.0, build,gemma-2-9b-it,20-gemmascope-res-131k
+0,3,114964,27.875, build,gemma-2-9b-it,20-gemmascope-res-131k
+0,3,37807,25.0, build,gemma-2-9b-it,20-gemmascope-res-131k
+0,3,8053,21.875, build,gemma-2-9b-it,20-gemmascope-res-131k
+0,3,124257,20.375, build,gemma-2-9b-it,20-gemmascope-res-131k
+0,3,117702,17.625, build,gemma-2-9b-it,20-gemmascope-res-131k
+0,4,97342,54.0, a,gemma-2-9b-it,20-gemmascope-res-131k
+0,4,26379,37.0, a,gemma-2-9b-it,20-gemmascope-res-131k
+0,4,98762,34.25, a,gemma-2-9b-it,20-gemmascope-res-131k
+0,4,32283,32.5, a,gemma-2-9b-it,20-gemmascope-res-131k
+0,4,109742,30.125, a,gemma-2-9b-it,20-gemmascope-res-131k
+0,4,8053,24.375, a,gemma-2-9b-it,20-gemmascope-res-131k
+0,4,90871,23.0, a,gemma-2-9b-it,20-gemmascope-res-131k
+0,4,114964,20.375, a,gemma-2-9b-it,20-gemmascope-res-131k
+0,4,72526,17.75, a,gemma-2-9b-it,20-gemmascope-res-131k
+0,4,107723,17.125, a,gemma-2-9b-it,20-gemmascope-res-131k
+0,5,90871,132.0, bomb,gemma-2-9b-it,20-gemmascope-res-131k
+0,5,35761,75.5, bomb,gemma-2-9b-it,20-gemmascope-res-131k
+0,5,26379,51.25, bomb,gemma-2-9b-it,20-gemmascope-res-131k
+0,5,20137,46.25, bomb,gemma-2-9b-it,20-gemmascope-res-131k
+0,5,32283,31.5, bomb,gemma-2-9b-it,20-gemmascope-res-131k
+0,5,96158,25.75, bomb,gemma-2-9b-it,20-gemmascope-res-131k
+0,5,106332,23.75, bomb,gemma-2-9b-it,20-gemmascope-res-131k
+0,5,14149,23.625, bomb,gemma-2-9b-it,20-gemmascope-res-131k
+0,5,79129,23.25, bomb,gemma-2-9b-it,20-gemmascope-res-131k
+0,5,20999,22.125, bomb,gemma-2-9b-it,20-gemmascope-res-131k
+0,6,90871,142.0,?,gemma-2-9b-it,20-gemmascope-res-131k
+0,6,26379,55.25,?,gemma-2-9b-it,20-gemmascope-res-131k
+0,6,27014,38.0,?,gemma-2-9b-it,20-gemmascope-res-131k
+0,6,186,37.75,?,gemma-2-9b-it,20-gemmascope-res-131k
+0,6,32283,35.5,?,gemma-2-9b-it,20-gemmascope-res-131k
+0,6,118827,30.75,?,gemma-2-9b-it,20-gemmascope-res-131k
+0,6,20137,24.375,?,gemma-2-9b-it,20-gemmascope-res-131k
+0,6,40141,23.375,?,gemma-2-9b-it,20-gemmascope-res-131k
+0,6,8053,22.875,?,gemma-2-9b-it,20-gemmascope-res-131k
+0,6,15911,22.75,?,gemma-2-9b-it,20-gemmascope-res-131k
