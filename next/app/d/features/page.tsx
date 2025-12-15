@@ -1,8 +1,10 @@
-function FeaturesPage() {
+
+
+async function FeaturesPage() {
     return (
         <div>
             <div>
-                <h1>Features</h1>
+                <h1>Select Feature To View Explanations</h1>
             </div>
             <div>
 
