@@ -1,4 +1,5 @@
 import { auth } from "@/auth";
+import Sidebar from "@/components/nav/Sidebar";
 import { redirect } from "next/navigation";
 import React from "react";
 
@@ -8,8 +9,9 @@ async function DashboardLayout({ children }: { children: React.ReactNode }) {
         redirect("/")
     }
     return (
-        <div className="">
-            {children}
+        <div className="flex flex-row gap-2">
+            <Sidebar />
+            {children}d
         </div>
     );
 }

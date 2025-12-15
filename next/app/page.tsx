@@ -1,5 +1,5 @@
 import { auth } from "@/auth";
-import SignInButton from "@/components/ui/auth/SignInButton";
+import SignInButton from "@/components/auth/SignInButton";
 import { redirect } from "next/navigation";
 
 export default async function Home() {

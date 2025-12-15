@@ -1,7 +1,7 @@
 
 import { signIn } from "@/auth"
 import Image from "next/image"
-import { Button } from "../button";
+import { Button } from "../ui/button";
 import GoogleLogo from "@/public/google_logo.png";
 function SignInButton() {
     return (
