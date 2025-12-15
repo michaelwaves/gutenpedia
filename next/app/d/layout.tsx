@@ -11,7 +11,7 @@ async function DashboardLayout({ children }: { children: React.ReactNode }) {
     return (
         <div className="flex flex-row gap-2">
             <Sidebar />
-            {children}d
+            {children}
         </div>
     );
 }
