@@ -1,5 +1,5 @@
 "use client"
-import { ArrowLeftFromLine, ArrowRightFromLine, Database, Home } from "lucide-react";
+import { ArrowLeftFromLine, ArrowRightFromLine, ChartNetwork, Database, Home } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -14,6 +14,11 @@ export const routes = [
         title: "Datasets",
         href: "/d/datasets",
         icon: <Database className="w-6 h-6" />
+    },
+    {
+        title: "Features",
+        href: "/d/features",
+        icon: <ChartNetwork className="w-6 h-6" />
     }
 ]
 

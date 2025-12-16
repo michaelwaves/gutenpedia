@@ -2,6 +2,7 @@ import { auth } from "@/auth";
 import Sidebar from "@/components/nav/Sidebar";
 import { redirect } from "next/navigation";
 import React from "react";
+import FeaturesPage from "./FeaturesPage";
 
 async function FeaturesLayout({ children }: { children: React.ReactNode }) {
     const session = await auth()
@@ -11,7 +12,7 @@ async function FeaturesLayout({ children }: { children: React.ReactNode }) {
     return (
         <div className="flex flex-row gap-2">
             <div>
-                Features
+                <FeaturesPage />
             </div>
             {children}
         </div>
