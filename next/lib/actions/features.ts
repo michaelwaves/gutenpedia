@@ -23,7 +23,10 @@ export async function findFeatures(criteria: Partial<Features>) {
     if (criteria.layer) {
         query = query.where('layer', '=', criteria.layer)
     }
-    return await query.selectAll().execute()
+    return await query
+        .innerJoin('explanations', 'explanations.feature_id', 'features.id')
+        .selectAll()
+        .execute()
 }
 
 export async function updateFeature(id: string, updateWith: Updateable<Features>) {
