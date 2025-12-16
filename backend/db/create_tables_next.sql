@@ -96,8 +96,7 @@ CREATE TABLE "explanations" (
 --UPDATE explanations e
 -- SET feature_id = f.id
 -- FROM features f
--- WHERE e.model_id = f.model_id
--- AND e.layer = f.layer
+-- WHERE e.layer = f.layer
 -- AND e.feature_index = f.feature_index
     "model_id" TEXT NOT NULL,
     "layer" TEXT NOT NULL,
