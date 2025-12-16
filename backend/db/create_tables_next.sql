@@ -92,6 +92,13 @@ CREATE TABLE "explanations" (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     feature_id UUID, --REFERENCES features(id) ON DELETE CASCADE,
     --temporary! just to do the mapping to feature id
+
+--UPDATE explanations e
+-- SET feature_id = f.id
+-- FROM features f
+-- WHERE e.model_id = f.model_id
+-- AND e.layer = f.layer
+-- AND e.feature_index = f.feature_index
     "model_id" TEXT NOT NULL,
     "layer" TEXT NOT NULL,
     feature_index INTEGER NOT NULL,
