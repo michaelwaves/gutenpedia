@@ -8,7 +8,7 @@ async function DatasetPage() {
             <div>
                 <h1 className="text-xl">Datasets</h1>
             </div>
-            <div>
+            <div className=" flex flex-row gap-2">
 
                 {
                     //@ts-expect-error description: created_at date incompatibility
