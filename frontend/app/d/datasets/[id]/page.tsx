@@ -1,5 +1,6 @@
 import { db } from "@/lib/db";
 import { sql } from "kysely";
+import SampleRow from "./SampleRow";
 
 async function DatasetPage({ params }: { params: Promise<{ id: string }> }) {
     const { id } = await params
@@ -8,11 +9,13 @@ async function DatasetPage({ params }: { params: Promise<{ id: string }> }) {
         <div>
             <table>
                 <thead>
-                    <th>Text</th>
+                    <tr>
+                        <th>Text</th>
+                    </tr>
                 </thead>
-                {samples.rows.map((sample) => <tr className="w-full h-8 hover:cursor-pointer hover:bg-gray-100">
-                    <td>{sample.sample_text}</td>
-                </tr>)}
+                <tbody>
+                    {samples.rows.map((sample) => <SampleRow id={id} sample={sample} />)}
+                </tbody>
             </table>
         </div>
     );

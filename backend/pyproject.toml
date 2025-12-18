@@ -33,8 +33,10 @@ dependencies = [
     "torch>=1.10; sys_platform == 'linux'",
     "torch>=1.10,!=2.0,!=2.1.0; sys_platform != 'linux'",
     "transformer-lens @ git+https://github.com/hijohnnylin/TransformerLens.git@temp_branch_version",
+    "sparsify",
 ]
 
 
 [tool.uv.sources]
 neuronpedia-inference-client = { path = "inference/neuronpedia-inference-client", editable = true }
+sparsify = { git = "https://github.com/EleutherAI/sparsify", rev = "9588e12" }
